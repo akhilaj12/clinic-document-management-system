@@ -1,0 +1,94 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1a73e8;
+}
+
+/* Card wrapper for each section */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Input + button side by side */
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+input[type="text"],
+input[type="file"] {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: #1a73e8;
+  color: white;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) { background: #1558b0; }
+button:disabled { background: #aaa; cursor: not-allowed; }
+
+.hint {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Document list */
+.doc-list { display: flex; flex-direction: column; gap: 12px; }
+
+.doc-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f8faff;
+  border: 1px solid #e0e7ff;
+  border-radius: 8px;
+}
+
+.doc-info { display: flex; flex-direction: column; gap: 4px; }
+.doc-name { font-weight: 600; }
+.doc-meta { font-size: 0.8rem; color: #888; }
+
+.doc-actions { display: flex; gap: 8px; }
+
+.btn-view { background: #34a853; }
+.btn-view:hover { background: #2d8f47; }
+
+.btn-delete { background: #ea4335; }
+.btn-delete:hover { background: #c5372c; }

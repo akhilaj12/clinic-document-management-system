@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+
+        # All /api/documents/** calls ? Document Service
+        - id: document-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/documents/**
+          filters:
+            - StripPrefix=0
+
+        # All /api/audit/** calls ? Audit Service
+        - id: audit-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/audit/**
+          filters:
+            - StripPrefix=0
+
+      # Allow React frontend to call the gateway
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
